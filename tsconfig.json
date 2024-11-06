@@ -14,12 +14,14 @@
     "target": "es2019",
     "lib": [
       "es2019"
-    ]
+    ],
+    "useUnknownInCatchVariables": false
   },
   "include": [
     "src/**/*"
   ],
   "exclude": [
-    "src/**/__tests__/*.ts"
+    "src/**/__tests__/*.ts",
+    "dist/**/*"
   ]
 }

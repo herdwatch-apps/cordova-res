@@ -10,21 +10,27 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node-version: [14.x, 16.x]
+        node-version: [20, 22, 23]
+        os: [macos-14, macos-15]
     steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-      - uses: actions/checkout@v1
+          cache: 'npm'
+          cache-dependency-path: ${{github.workspace}}/package-lock.json
+      - uses: actions/checkout@v4
       - name: npm install, build, and test
         env:
           CI: true
         run: |
-          npm install
+          npm ci
           npm run lint
           npm run build
           npm test

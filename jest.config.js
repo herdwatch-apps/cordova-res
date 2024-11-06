@@ -1,16 +1,13 @@
 module.exports = {
   preset: 'ts-jest',
-  globals: {
-    'ts-jest': {
-      diagnostics: {
-        // warnOnly: true,
-      },
-      tsConfig: {
+  transform: {
+    "\\.[ts]?$": ['ts-jest', {
+      tsconfig: {
         types: [
           "node",
           "jest",
         ],
       },
-    },
-  },
+    }],
+  }
 };

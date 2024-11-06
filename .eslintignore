@@ -1,0 +1,4 @@
+.eslintrc.js
+dist/
+jest.config.js
+src/**/__tests__/*.ts
