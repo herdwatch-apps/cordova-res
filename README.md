@@ -1,5 +1,15 @@
 # Capacitor Assets (formerly cordova-res)
 
+## Why this fork exists
+
+Forked from [upstream](https://github.com/ionic-team/capacitor-assets) (still `cordova-res` at the time of forking; upstream has since been renamed/absorbed into Capacitor Assets) to publish under the `@herdwatch` npm scope and to bump `sharp` and its surrounding TypeScript/Jest/ESLint tooling past what was pinned at the `0.15.4` release.
+
+Published as [`@herdwatch/cordova-res`](https://www.npmjs.com/package/@herdwatch/cordova-res).
+
+Changes from upstream:
+- Republished under the `@herdwatch/cordova-res` npm scope.
+- Bumped `sharp` (`0.29.2` → `0.33.5`) and related dev tooling (TypeScript, ts-jest, ESLint, `np`), switched to committing `package-lock.json`, and updated `tsconfig`/`jest.config`/`.eslintrc` accordingly.
+
 *Note: Capacitor Assets isn't quite ready for use. For now, continue to use `cordova-res` as shown below. We will have an update once the new version of this tool is ready.*
 
 This tool will crop and resize JPEG and PNG source images to generate icons and splash screens for modern iOS, Android, and Windows. `cordova-res` was developed for use with Cordova, but Capacitor and other native runtimes are supported.
