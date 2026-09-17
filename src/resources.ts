@@ -1205,6 +1205,43 @@ export const IOS_60_PT_3X_ICON: IOSIconResourceConfig = {
  *
  * - iPad App (iOS 5,6)
  */
+/**
+ * 64pt and 68pt icons, added for cordova-ios 8. Its `platformIcons` table in `lib/prepare.js`
+ * has slots for `icon-64@2x.png`, `icon-64@3x.png` and `icon-68@2x.png`, and it fills a slot
+ * only from an icon declared at exactly that pixel size -- `useDefault` is set on the 1024
+ * entry alone, so nothing back-fills these. Without them the three slots are simply absent
+ * from the generated AppIcon Contents.json.
+ */
+export const IOS_64_PT_2X_ICON: IOSIconResourceConfig = {
+  platform: Platform.IOS,
+  type: ResourceType.ICON,
+  src: 'icon-64@2x.png',
+  format: Format.PNG,
+  width: 128,
+  height: 128,
+  scale: 2,
+};
+
+export const IOS_64_PT_3X_ICON: IOSIconResourceConfig = {
+  platform: Platform.IOS,
+  type: ResourceType.ICON,
+  src: 'icon-64@3x.png',
+  format: Format.PNG,
+  width: 192,
+  height: 192,
+  scale: 3,
+};
+
+export const IOS_68_PT_2X_ICON: IOSIconResourceConfig = {
+  platform: Platform.IOS,
+  type: ResourceType.ICON,
+  src: 'icon-68@2x.png',
+  format: Format.PNG,
+  width: 136,
+  height: 136,
+  scale: 2,
+};
+
 export const IOS_72_PT_ICON: IOSIconResourceConfig = {
   platform: Platform.IOS,
   type: ResourceType.ICON,
@@ -1371,30 +1408,20 @@ export const IOS_108_PT_2X_ICON: IOSIconResourceConfig = {
 };
 
 export const IOS_ICON_RESOURCES: readonly IOSIconResourceConfig[] = [
-  IOS_57_PT_ICON,
   IOS_57_PT_2X_ICON,
-  IOS_20_PT_ICON,
   IOS_20_PT_2X_ICON,
   IOS_20_PT_3X_ICON,
-  IOS_29_PT_ICON,
   IOS_29_PT_2X_ICON,
   IOS_29_PT_3X_ICON,
-  IOS_24_PT_ICON,
-  IOS_27_5_PT_ICON,
-  IOS_44_PT_2X_ICON,
-  IOS_86_PT_2X_ICON,
-  IOS_98_PT_2X_ICON,
-  IOS_108_PT_2X_ICON,
   IOS_40_PT_ICON,
   IOS_40_PT_2X_ICON,
   IOS_40_PT_3X_ICON,
-  IOS_50_PT_ICON,
-  IOS_50_PT_2X_ICON,
   IOS_60_PT_ICON,
   IOS_60_PT_2X_ICON,
   IOS_60_PT_3X_ICON,
-  IOS_72_PT_ICON,
-  IOS_72_PT_2X_ICON,
+  IOS_64_PT_2X_ICON,
+  IOS_64_PT_3X_ICON,
+  IOS_68_PT_2X_ICON,
   IOS_76_PT_ICON,
   IOS_76_PT_2X_ICON,
   IOS_83_5_PT_2X_ICON,
