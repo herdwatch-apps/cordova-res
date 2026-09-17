@@ -9,6 +9,15 @@ Published as [`@herdwatch/cordova-res`](https://www.npmjs.com/package/@herdwatch
 Changes from upstream:
 - Republished under the `@herdwatch/cordova-res` npm scope.
 - Bumped `sharp` (`0.29.2` → `0.33.5`) and related dev tooling (TypeScript, ts-jest, ESLint, `np`), switched to committing `package-lock.json`, and updated `tsconfig`/`jest.config`/`.eslintrc` accordingly.
+- Aligned `IOS_ICON_RESOURCES` with what cordova-ios 8 consumes. Its `platformIcons` table in
+  `lib/prepare.js` fills a slot only from an icon declared at exactly that pixel size, and
+  `useDefault` is set on the 1024 entry alone, so nothing back-fills a size that is not generated.
+  Three sizes it asks for were missing (`icon-64@2x` 128, `icon-64@3x` 192, `icon-68@2x` 136) and
+  are now generated; thirteen that it has no slot for were being generated and discarded on every
+  build (the iOS 6-era `57`/`20`/`29`/`50`/`72`/`144` sizes, and `88`/`172`/`196`/`216`, which are
+  watchOS sizes needing a `target="watchos"` declaration) and are no longer in the set. The consts
+  themselves are still exported, so nothing importing them breaks -- only the default set changed.
+  Note this is correct for cordova-ios 8; on 7.x and earlier the legacy sizes did matter.
 
 *Note: Capacitor Assets isn't quite ready for use. For now, continue to use `cordova-res` as shown below. We will have an update once the new version of this tool is ready.*
 
