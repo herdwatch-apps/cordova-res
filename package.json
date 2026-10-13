@@ -1,6 +1,6 @@
 {
   "name": "@herdwatch/cordova-res",
-  "version": "0.15.4-fix.2",
+  "version": "0.15.4-fix.3",
   "description": "This tool will crop and resize PNG source images into appropriate sizes for modern iOS and Android devices.",
   "homepage": "https://github.com/herdwatch-apps/cordova-res#readme",
   "author": "Ionic Team <hi@ionicframework.com>",
@@ -8,7 +8,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "engines": {
-    "node": ">=10.3.0"
+    "node": ">=20.9.0"
   },
   "bin": {
     "cordova-res": "./bin/cordova-res"
@@ -66,8 +66,7 @@
     "@types/elementtree": "^0.1.5",
     "@types/fs-extra": "^11.0.4",
     "@types/jest": "^29.5.14",
-    "@types/node": "~16.11.68",
-    "@types/sharp": "^0.32.0",
+    "@types/node": "~20.19.43",
     "eslint-config-prettier": "8.8.0",
     "eslint-import-resolver-alias": "1.1.2",
     "eslint-plugin-dependencies": "2.5.0",
